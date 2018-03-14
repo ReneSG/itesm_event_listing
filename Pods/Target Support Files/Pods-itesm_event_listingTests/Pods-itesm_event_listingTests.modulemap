@@ -1,0 +1,6 @@
+framework module Pods_itesm_event_listingTests {
+  umbrella header "Pods-itesm_event_listingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
