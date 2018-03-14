@@ -8,7 +8,8 @@ target 'itesm_event_listing' do
   # Pods for itesm_event_listing
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage'
-
+  pod 'FacebookShare'
+  
   target 'itesm_event_listingTests' do
     inherit! :search_paths
     # Pods for testing
