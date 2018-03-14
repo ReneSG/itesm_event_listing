@@ -7,7 +7,25 @@
 		<key>itesm_event_listing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F61D78E9205604DC00EA2644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F61D78FD205604DD00EA2644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F61D7908205604DD00EA2644</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

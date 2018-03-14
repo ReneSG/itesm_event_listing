@@ -67,6 +67,7 @@
 		F667BA882058BA930035E460 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		F67490E22058AC9C002F490E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F67490E42058AFCE002F490E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = itesm_event_listing.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +146,7 @@
 		F61D78EC205604DD00EA2644 /* itesm_event_listing */ = {
 			isa = PBXGroup;
 			children = (
+				F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */,
 				F67490E22058AC9C002F490E /* Event.swift */,
 				F667BA842058B5270035E460 /* EventsTableViewController.swift */,
 				F61D78ED205604DD00EA2644 /* AppDelegate.swift */,
@@ -255,6 +257,11 @@
 					F61D78E9205604DC00EA2644 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					F61D78FD205604DD00EA2644 = {
 						CreatedOnToolsVersion = 9.2;
@@ -439,11 +446,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-itesm_event_listing/Pods-itesm_event_listing-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -644,7 +661,9 @@
 			baseConfigurationReference = 95D854729F2E8104A0E226ED /* Pods-itesm_event_listing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J66VD9NRME;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
@@ -659,7 +678,9 @@
 			baseConfigurationReference = EA31740ECC6EAA7D41D644BC /* Pods-itesm_event_listing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J66VD9NRME;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
