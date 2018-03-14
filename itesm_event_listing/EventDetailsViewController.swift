@@ -7,6 +7,7 @@
 //
 
 import AlamofireImage
+import FacebookShare
 import UIKit
 
 class EventDetailsViewController: UIViewController {
@@ -32,7 +33,28 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func shareOnFacebook(_ sender: Any) {
+        if !UIApplication.shared.canOpenURL(URL(string: "fbauth2://")!) {
+            print("Facebook is not installed")
+        } else {
+            let shareDialog = ShareDialog(content: PhotoShareContent(photos: [Photo(image: eventImage.image!, userGenerated: true)]))
+            shareDialog.mode = .native
+            shareDialog.failsOnInvalidData = true
+            shareDialog.completion = { result in
+            // Handle share results
+            }
+            
+            do {
+                try shareDialog.show()
+            } catch {
+                print("Error displaying share dialog")
+            }
+        }
+    }
+    
+    @IBAction func shareOnTwitter(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
