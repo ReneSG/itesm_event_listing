@@ -24,14 +24,6 @@
 				<string>fb$(FACEBOOK_APP_ID)</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string></string>
-			</array>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -42,8 +34,7 @@
 itesm_test</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>google</string>
-		<string>comgooglecalendar</string>
+		<string>whatsap</string>
 		<string>fb</string>
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
@@ -72,28 +63,6 @@ itesm_test</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb$(FACEBOOK_APP_ID)</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>$(FACEBOOK_APP_ID)</string>
-	<key>FacebookDisplayName</key>
-	<string>
-itesm_test</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fb</string>
-		<string>fbapi</string>
-		<string>fb-messenger-share-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
 	</array>
 </dict>
 </plist>

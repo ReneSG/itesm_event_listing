@@ -85,20 +85,28 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
     }
     
     @IBAction func shareEvent(_ sender: Any) {
-        let textItem =  "Te comparto este evento: \(eventName)"
-        let imageItem = eventImage
-        let activityC = UIActivityViewController(activityItems: [imageItem, textItem], applicationActivities:nil)
+        var objectsToShare = [AnyObject]()
         
-        self.present(activityC, animated: true, completion: nil)
-        activityC.excludedActivityTypes = [.assignToContact,.postToVimeo,.postToWeibo,.postToFlickr,.postToTencentWeibo]
-        activityC.completionWithItemsHandler = {
+        if let name = eventName.text {
+            let textItem =  "Te comparto este evento: \(name)"
+            objectsToShare.append(textItem as AnyObject)
+        }
+        if let image = eventImage.image {
+             let imageItem = image
+            objectsToShare.append(imageItem)
+        }
+        
+        let event = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        self.present(event, animated: true, completion: nil)
+        event.excludedActivityTypes = [.assignToContact,.postToVimeo,.postToWeibo,.postToFlickr,.postToTencentWeibo,.openInIBooks,.addToReadingList]
+        event.completionWithItemsHandler = {
             (type, success,items,error)->Void in
             if success{
-                print("item shared of type \(type)")
+                print("item shared")
             }
         }
     }
-    
 
     func createEvent() {
         if !UIApplication.shared.canOpenURL(URL(string: "comgooglecalendar://")!) {
