@@ -37,8 +37,12 @@ class EventsCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationView = segue.destination as! EventDetailsViewController
-        destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
+        if segue.identifier == "filter" {
+            
+        } else {
+            let destinationView = segue.destination as! EventDetailsViewController
+            destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
+        }
     }
 
     // MARK: UICollectionViewDataSource
