@@ -11,6 +11,8 @@
 		6991AC1B1CE7F71922ACE000 /* Pods_itesm_event_listingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */; };
 		740ECE954B56634691F3508F /* Pods_itesm_event_listingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E40FF0EAB284D845B741A9D /* Pods_itesm_event_listingUITests.framework */; };
 		84C1012F207B46450014E077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C1012E207B46450014E077 /* GoogleService-Info.plist */; };
+		84C10131207BCE2B0014E077 /* FavoriteEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */; };
+		84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */; };
 		F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D78ED205604DD00EA2644 /* AppDelegate.swift */; };
 		F61D78F3205604DD00EA2644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61D78F1205604DD00EA2644 /* Main.storyboard */; };
 		F61D78F5205604DD00EA2644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61D78F4205604DD00EA2644 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		4E3C3B94F27A0E5D188E0139 /* Pods-itesm_event_listingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingUITests/Pods-itesm_event_listingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itesm_event_listingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C1012E207B46450014E077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsTableViewController.swift; sourceTree = "<group>"; };
+		84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventsTableViewController.swift; sourceTree = "<group>"; };
 		95D854729F2E8104A0E226ED /* Pods-itesm_event_listing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listing/Pods-itesm_event_listing.debug.xcconfig"; sourceTree = "<group>"; };
 		C62E8586F6FF9561BCEE33A5 /* Pods-itesm_event_listingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingTests/Pods-itesm_event_listingTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA31740ECC6EAA7D41D644BC /* Pods-itesm_event_listing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listing.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listing/Pods-itesm_event_listing.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,15 +155,17 @@
 				84C1012E207B46450014E077 /* GoogleService-Info.plist */,
 				F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */,
 				F67490E22058AC9C002F490E /* Event.swift */,
+				F667BA862058B7550035E460 /* EventTableViewCell.swift */,
+				F667BA882058BA930035E460 /* EventDetailsViewController.swift */,
 				F667BA842058B5270035E460 /* EventsTableViewController.swift */,
+				84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */,
+				84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */,
 				F61D78ED205604DD00EA2644 /* AppDelegate.swift */,
 				F61D78F1205604DD00EA2644 /* Main.storyboard */,
 				F61D78F4205604DD00EA2644 /* Assets.xcassets */,
 				F61D78F6205604DD00EA2644 /* LaunchScreen.storyboard */,
 				F61D78F9205604DD00EA2644 /* Info.plist */,
 				F67490E42058AFCE002F490E /* APIManager.swift */,
-				F667BA862058B7550035E460 /* EventTableViewCell.swift */,
-				F667BA882058BA930035E460 /* EventDetailsViewController.swift */,
 			);
 			path = itesm_event_listing;
 			sourceTree = "<group>";
@@ -506,7 +512,9 @@
 			files = (
 				F667BA892058BA930035E460 /* EventDetailsViewController.swift in Sources */,
 				F67490E52058AFCE002F490E /* APIManager.swift in Sources */,
+				84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */,
 				F67490E32058AC9C002F490E /* Event.swift in Sources */,
+				84C10131207BCE2B0014E077 /* FavoriteEventsTableViewController.swift in Sources */,
 				F667BA852058B5270035E460 /* EventsTableViewController.swift in Sources */,
 				F667BA872058B7550035E460 /* EventTableViewCell.swift in Sources */,
 				F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */,
@@ -678,10 +686,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J66VD9NRME;
+				DEVELOPMENT_TEAM = X94BRTC6JB;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -695,10 +703,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J66VD9NRME;
+				DEVELOPMENT_TEAM = X94BRTC6JB;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
