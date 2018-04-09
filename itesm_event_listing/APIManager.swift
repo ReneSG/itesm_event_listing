@@ -21,8 +21,8 @@ class APIManager {
                     let event =  Event(id: eventJSON["id"] as! Int,
                                        photoURL: eventJSON["photo"] as! String,
                                        name: eventJSON["name"] as! String,
-                                       startDate: eventJSON["startDate"] as! String,
-                                       startTime: eventJSON["startTime"] as! String,
+                                       startDate: eventJSON["startDatetime"] as! String,
+                                       startTime: "123",
                                        location: eventJSON["location"] as? String)
                     events.append(event)
                     completion(events)
