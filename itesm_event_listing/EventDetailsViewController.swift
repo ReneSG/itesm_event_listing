@@ -157,7 +157,7 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         default:
             urlId = "facebook/id284882215?l=en&mt=8"
         }
-        let alert = UIAlertController(title: "Restore \(appName))?",
+        let alert = UIAlertController(title: "Restore \(appName)?",
                                       message: "You followed a link that requires the app \(appName),which is no longer on your iPhone. You can restore it from the App Store.",
                                       preferredStyle: UIAlertControllerStyle.alert)
         let showAppStore = UIAlertAction(
