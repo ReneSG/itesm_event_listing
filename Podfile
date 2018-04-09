@@ -9,6 +9,8 @@ target 'itesm_event_listing' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage'
   pod 'FacebookShare'
+  pod 'GoogleAPIClientForREST/Calendar', '~> 1.2.1'
+  pod 'Google/SignIn', '~> 3.0.3'
   
   target 'itesm_event_listingTests' do
     inherit! :search_paths
