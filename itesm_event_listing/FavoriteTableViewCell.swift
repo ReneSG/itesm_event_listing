@@ -1,25 +1,18 @@
 //
-//  EventTableViewCell.swift
+//  FavoriteTableViewCell.swift
 //  itesm_event_listing
 //
-//  Created by Rene Garcia Saenz on 3/13/18.
+//  Created by Andrés Villanueva on 4/9/18.
 //  Copyright © 2018 Rene Garcia Saenz. All rights reserved.
 //
 
 import UIKit
 
-protocol protocoloFavorito {
-    func addFavorito(cell: EventTableViewCell)
-}
+class FavoriteTableViewCell: UITableViewCell {
 
-class EventTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var btFavorite: UIButton!
-    @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
-    
-    var delagate : protocoloFavorito?
+    @IBOutlet weak var eventImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +25,4 @@ class EventTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBAction func botonFavorito(_ sender: UIButton) {
-        delagate?.addFavorito(cell: self)
-        
-    }
 }

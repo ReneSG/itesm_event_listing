@@ -8,9 +8,12 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
-
+class EventsTableViewController: UITableViewController, protocoloFavorito{
+    
+    
     var events = [Event]()
+    
+    var eventsCodable = [EventsCodable]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,41 @@ class EventsTableViewController: UITableViewController {
         self.title = "Cartelera"
     }
 
+    func addFavorito(cell: EventTableViewCell) {
+        //Sacar el renglon en donde esta el favorito
+        guard let indexPath = self.tableView.indexPath(for: cell) else {
+            return
+        }
+    
+        
+        let id = events[indexPath.row].id
+        let photoURL = events[indexPath.row].photoURL
+        let name = events[indexPath.row].name
+        let startDate = events[indexPath.row].startDate
+        let startTime = events[indexPath.row].startTime
+        let location = events[indexPath.row].location
+        
+        let evento = EventsCodable(id: id, photoURL: photoURL, name: name, startDate: startDate, startTime: startTime, location: location)
+        
+        eventsCodable.append(evento)
+        
+        //print("Button tapped on row \(indexPath.row)")
+        
+        storeEvents()
+    }
+    
+    func storeEvents() {
+        do {
+            let data = try PropertyListEncoder().encode(eventsCodable)
+            let success = NSKeyedArchiver.archiveRootObject(data, toFile:
+                EventsCodable.ArchiveURL.path)
+            print(success ? "Successful save" : "Save failed")
+        }
+        catch {
+            print("Save failed")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,11 +76,15 @@ class EventsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) as! EventTableViewCell
 
         cell.eventLocation.text = events[indexPath.row].location
         cell.eventName.text = events[indexPath.row].name
         cell.eventImage.af_setImage(withURL: URL(string: events[indexPath.row].photoURL)!)
+        
+        cell.delagate = self
+        
         return cell
     }
     
