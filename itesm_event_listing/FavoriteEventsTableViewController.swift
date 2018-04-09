@@ -1,25 +1,19 @@
 //
-//  EventsTableViewController.swift
+//  FavoriteEventsTableViewController.swift
 //  itesm_event_listing
 //
-//  Created by Rene Garcia Saenz on 3/13/18.
+//  Created by renysg on 4/9/18.
 //  Copyright © 2018 Rene Garcia Saenz. All rights reserved.
 //
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
-
-    var events = [Event]()
+class FavoriteEventsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIManager.sharedInstance.getEvents { (events) in
-            self.events = events
-            self.tableView.reloadData()
-        }
-        
-        self.title = "Cartelera"
+
+        self.title = "Favoritos"
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,25 +24,24 @@ class EventsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath) as! EventTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.eventLocation.text = events[indexPath.row].location
-        cell.eventName.text = events[indexPath.row].name
-        cell.eventImage.af_setImage(withURL: URL(string: events[indexPath.row].photoURL)!)
+        // Configure the cell...
+
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -85,12 +78,14 @@ class EventsTableViewController: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationView = segue.destination as! EventDetailsViewController
-        destinationView.event = events[(tableView.indexPathForSelectedRow?.row)!]
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }

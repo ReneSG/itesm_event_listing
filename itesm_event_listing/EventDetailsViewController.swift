@@ -44,8 +44,10 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
 
         // Add the sign-in button
         let viewHeight = view.frame.size.height
-        signInButton.frame = CGRect(x: self.view.center.x-(50), y: viewHeight - 80 , width: 80, height: 50)
+        signInButton.frame = CGRect(x: self.view.center.x-(50), y: viewHeight - 110 , width: 80, height: 50)
         view.addSubview(signInButton)
+        
+        self.title = eventName.text
     }
 
     override func didReceiveMemoryWarning() {
