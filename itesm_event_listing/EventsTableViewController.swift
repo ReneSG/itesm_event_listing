@@ -18,6 +18,8 @@ class EventsTableViewController: UITableViewController {
             self.events = events
             self.tableView.reloadData()
         }
+        
+        self.title = "Cartelera"
     }
 
     override func didReceiveMemoryWarning() {
