@@ -7,6 +7,7 @@
 //
 
 import AlamofireImage
+import Social
 import FacebookShare
 import GoogleAPIClientForREST
 import GoogleSignIn
@@ -82,9 +83,22 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             }
         }
     }
-
-    @IBAction func shareOnTwitter(_ sender: Any) {
+    
+    @IBAction func shareEvent(_ sender: Any) {
+        let textItem =  "Te comparto este evento: \(eventName)"
+        let imageItem = eventImage
+        let activityC = UIActivityViewController(activityItems: [imageItem, textItem], applicationActivities:nil)
+        
+        self.present(activityC, animated: true, completion: nil)
+        activityC.excludedActivityTypes = [.assignToContact,.postToVimeo,.postToWeibo,.postToFlickr,.postToTencentWeibo]
+        activityC.completionWithItemsHandler = {
+            (type, success,items,error)->Void in
+            if success{
+                print("item shared of type \(type)")
+            }
+        }
     }
+    
 
     func createEvent() {
         if !UIApplication.shared.canOpenURL(URL(string: "comgooglecalendar://")!) {
