@@ -107,7 +107,11 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             }
         }
     }
-
+    
+    @IBAction func returnToCollectionView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func createEvent() {
         if !UIApplication.shared.canOpenURL(URL(string: "comgooglecalendar://")!) {
             showMissingAppAlert(appName: "Google Calendar")
