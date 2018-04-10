@@ -87,11 +87,11 @@
             </objects>
             <point key="canvasLocation" x="2102" y="815"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Cartelera-->
         <scene sceneID="bVw-2z-NwB">
             <objects>
                 <navigationController id="WKX-iN-BMu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="house" id="KgT-cD-zDt"/>
+                    <tabBarItem key="tabBarItem" title="Cartelera" image="house" id="KgT-cD-zDt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bx8-bQ-mbi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -327,11 +327,11 @@
             </objects>
             <point key="canvasLocation" x="-982" y="963"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Buscar-->
         <scene sceneID="9dI-Xy-qqD">
             <objects>
                 <navigationController id="h1t-5w-0vc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifying_glass" id="jRe-Dj-W32"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="magnifying_glass" id="jRe-Dj-W32"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FQP-Un-dMb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -344,11 +344,11 @@
             </objects>
             <point key="canvasLocation" x="-1934" y="963"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favoritos-->
         <scene sceneID="HMb-r1-lXQ">
             <objects>
                 <navigationController id="e2g-tK-oQ7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="star" id="9b7-dz-uat"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star" id="9b7-dz-uat"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A0L-5V-zY3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
