@@ -8,7 +8,6 @@ target 'itesm_event_listing' do
   # Pods for itesm_event_listing
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireImage'
-  pod 'FacebookShare'
   pod 'GoogleAPIClientForREST/Calendar', '~> 1.2.1'
   pod 'Google/SignIn', '~> 3.0.3'
   
