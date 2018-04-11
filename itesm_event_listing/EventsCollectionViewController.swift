@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class EventsCollectionViewController: UICollectionViewController {
+class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var events = [Event]()
 
@@ -61,19 +61,15 @@ class EventsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "idCell", for: indexPath) as! EventCollectionViewCell
-    
-        cell.eventLocation.text = events[indexPath.row].location
+        
         cell.eventName.text = events[indexPath.row].name
         cell.eventImage.af_setImage(withURL: URL(string: events[indexPath.row].photoURL)!)
-    
         return cell
     }
 
     // MARK: UICollectionViewDelegate
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat =  50
-        let collectionViewSize = collectionView.frame.size.width - padding
+        let collectionViewSize = collectionView.frame.size.width
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
