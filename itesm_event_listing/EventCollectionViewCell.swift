@@ -12,7 +12,6 @@ class EventCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
-    @IBOutlet weak var eventLocation: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

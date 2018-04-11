@@ -112,44 +112,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bha-mf-AZn">
-                            <size key="itemSize" width="171" height="189"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bha-mf-AZn">
+                            <size key="itemSize" width="144" height="132"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="idCell" id="fhe-Ac-dGW" customClass="EventCollectionViewCell" customModule="itesm_event_listing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="171" height="189"/>
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="171" height="189"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="144" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-NF-8dQ">
-                                            <rect key="frame" x="7" y="0.0" width="182" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wsx-NF-8dQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="132"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI3-XF-jP2">
-                                            <rect key="frame" x="20" y="131" width="140" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5d-mT-czF">
-                                            <rect key="frame" x="20" y="159" width="131" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9G-co-Es5">
+                                            <rect key="frame" x="0.0" y="99" width="144" height="33"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-WV-RgC">
+                                                    <rect key="frame" x="8" y="6" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="JDw-WV-RgC" secondAttribute="bottom" constant="6" id="6Ks-BQ-Nfk"/>
+                                                <constraint firstItem="JDw-WV-RgC" firstAttribute="leading" secondItem="E9G-co-Es5" secondAttribute="leading" constant="8" id="C7P-Ec-x1Q"/>
+                                                <constraint firstAttribute="height" constant="33" id="y1r-Wl-5g5"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="wsx-NF-8dQ" firstAttribute="leading" secondItem="fhe-Ac-dGW" secondAttribute="leading" id="CVB-yo-VkQ"/>
+                                    <constraint firstItem="wsx-NF-8dQ" firstAttribute="top" secondItem="fhe-Ac-dGW" secondAttribute="top" id="RYo-2x-Mdc"/>
+                                    <constraint firstAttribute="trailing" secondItem="wsx-NF-8dQ" secondAttribute="trailing" id="bxz-cg-f5G"/>
+                                    <constraint firstAttribute="bottom" secondItem="E9G-co-Es5" secondAttribute="bottom" id="gCa-Gh-bPW"/>
+                                    <constraint firstAttribute="trailing" secondItem="E9G-co-Es5" secondAttribute="trailing" id="hgj-Ux-LRR"/>
+                                    <constraint firstItem="E9G-co-Es5" firstAttribute="leading" secondItem="fhe-Ac-dGW" secondAttribute="leading" id="l45-if-zUV"/>
+                                    <constraint firstAttribute="bottom" secondItem="wsx-NF-8dQ" secondAttribute="bottom" id="qEz-SB-XmY"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="eventImage" destination="wsx-NF-8dQ" id="hQm-gA-KSb"/>
-                                    <outlet property="eventLocation" destination="z5d-mT-czF" id="ds3-NC-aBK"/>
-                                    <outlet property="eventName" destination="OI3-XF-jP2" id="gwA-Xo-fCw"/>
+                                    <outlet property="eventName" destination="JDw-WV-RgC" id="tlv-5q-0E2"/>
                                     <segue destination="5f4-lW-YvV" kind="show" id="FUP-YE-mvg"/>
                                 </connections>
                             </collectionViewCell>
