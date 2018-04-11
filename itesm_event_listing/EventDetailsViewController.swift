@@ -8,7 +8,6 @@
 
 import AlamofireImage
 import Social
-import FacebookShare
 import GoogleAPIClientForREST
 import GoogleSignIn
 import UIKit
@@ -64,25 +63,6 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             createEvent()
         }
     }
-
-    @IBAction func shareOnFacebook(_ sender: Any) {
-        if !UIApplication.shared.canOpenURL(URL(string: "fbauth2://")!) {
-            print("Facebook is not installed")
-        } else {
-            let shareDialog = ShareDialog(content: PhotoShareContent(photos: [Photo(image: eventImage.image!, userGenerated: true)]))
-            shareDialog.mode = .native
-            shareDialog.failsOnInvalidData = true
-            shareDialog.completion = { result in
-            // Handle share results
-            }
-
-            do {
-                try shareDialog.show()
-            } catch {
-                print("Error displaying share dialog")
-            }
-        }
-    }
     
     @IBAction func shareEvent(_ sender: Any) {
         var objectsToShare = [AnyObject]()
@@ -107,7 +87,11 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             }
         }
     }
-
+    
+    @IBAction func returnToCollectionView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func createEvent() {
         if !UIApplication.shared.canOpenURL(URL(string: "comgooglecalendar://")!) {
             showMissingAppAlert(appName: "Google Calendar")
@@ -179,7 +163,7 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         case "Google Calendar":
             urlId = "google-calendar/id909319292?l=en&mt=8"
         default:
-            urlId = "facebook/id284882215?l=en&mt=8"
+            urlId = ""
         }
         let alert = UIAlertController(title: "Restore \(appName)?",
                                       message: "You followed a link that requires the app \(appName),which is no longer on your iPhone. You can restore it from the App Store.",

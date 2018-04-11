@@ -40,7 +40,8 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         if segue.identifier == "filter" {
             
         } else {
-            let destinationView = segue.destination as! EventDetailsViewController
+            let navigationControllerView = segue.destination as! UINavigationController
+            let destinationView = navigationControllerView.topViewController as! EventDetailsViewController
             destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
         }
     }
