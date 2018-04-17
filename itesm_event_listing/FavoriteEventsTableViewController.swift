@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoriteEventsTableViewController: UITableViewController {
     
@@ -43,7 +44,7 @@ class FavoriteEventsTableViewController: UITableViewController {
         
         cell.eventName.text = eventsFavoritos[indexPath.row].name
         cell.eventLocation.text = eventsFavoritos[indexPath.row].location
-        cell.eventImage.af_setImage(withURL: URL(string: eventsFavoritos[indexPath.row].photoURL)!)
+        cell.eventImage.af_setImage(withURL: URL(string: eventsFavoritos[indexPath.row].photoURL!)!)
         
         return cell
         
@@ -53,8 +54,14 @@ class FavoriteEventsTableViewController: UITableViewController {
         return 120
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        loadDatos()
+    }
+    
     func loadDatos()
     {
+        eventsFavoritos.removeAll()
         guard let listaEventos = retrieveEvents() else {return}
         
         self.eventsFavoritos = listaEventos
@@ -65,6 +72,7 @@ class FavoriteEventsTableViewController: UITableViewController {
     func retrieveEvents() -> [EventsCodable]? {
         guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: EventsCodable.ArchiveURL.path) as? Data else { return nil }
         do {
+            
             let products = try
                 PropertyListDecoder().decode([EventsCodable].self, from: data)
             return products

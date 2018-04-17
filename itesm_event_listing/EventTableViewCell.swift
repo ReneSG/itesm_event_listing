@@ -33,7 +33,8 @@ class EventTableViewCell: UITableViewCell {
     }
 
     @IBAction func botonFavorito(_ sender: UIButton) {
-        delagate?.addFavorito(cell: self)
+        btFavorite.setImage(#imageLiteral(resourceName: "fav_fill"),for: UIControlState.selected)
+            delagate?.addFavorito(cell: self)
         
     }
 }

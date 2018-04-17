@@ -43,6 +43,8 @@ class EventsTableViewController: UITableViewController, protocoloFavorito{
         
         eventsCodable.append(evento)
         
+        //print(eventsCodable[0].name)
+        
         //print("Button tapped on row \(indexPath.row)")
         
         storeEvents()
@@ -63,6 +65,7 @@ class EventsTableViewController: UITableViewController, protocoloFavorito{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+
     }
 
     // MARK: - Table view data source

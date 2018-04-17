@@ -10,10 +10,10 @@ import UIKit
 
 class EventsCodable: Codable {
     var id: Int
-    var photoURL: String
-    var name: String
-    var startDate: String
-    var startTime: String
+    var photoURL: String?
+    var name: String?
+    var startDate: String?
+    var startTime: String?
     var location: String?
     
     init(id: Int, photoURL: String, name: String, startDate: String, startTime: String, location: String?) {

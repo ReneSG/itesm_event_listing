@@ -44,10 +44,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN5-AQ-SNi">
-                                            <rect key="frame" x="321" y="0.0" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN5-AQ-SNi">
+                                            <rect key="frame" x="331" y="0.0" width="28" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Fav"/>
+                                            <state key="normal" title="Fav" image="fav_empty"/>
                                             <connections>
                                                 <action selector="botonFavorito:" destination="Bmi-9S-Gph" eventType="touchUpInside" id="prp-5f-8fY"/>
                                             </connections>
@@ -72,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvD-yI-j00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="86"/>
+            <point key="canvasLocation" x="893.60000000000002" y="85.907046476761622"/>
         </scene>
         <!--Event Details View Controller-->
         <scene sceneID="xLc-WH-dBT">
@@ -203,6 +203,7 @@
                                     <outlet property="eventImage" destination="UkG-Vf-ksf" id="GGj-jY-lcW"/>
                                     <outlet property="eventLocation" destination="YwY-Co-uG7" id="bj4-Zy-BIp"/>
                                     <outlet property="eventName" destination="lHB-m8-1oi" id="lXP-Xs-BJO"/>
+                                    <segue destination="5f4-lW-YvV" kind="show" id="K3l-mQ-B1q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -302,8 +303,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fav_empty" width="50" height="50"/>
         <image name="house" width="26" height="26"/>
         <image name="magnifying_glass" width="26" height="26"/>
         <image name="star" width="26" height="26"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FRF-wR-vQ6"/>
+    </inferredMetricsTieBreakers>
 </document>
