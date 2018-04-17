@@ -10,10 +10,11 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, protocoloFavorito {
 
     var events = [Event]()
-
+    var eventsCodable = [EventsCodable]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         APIManager.sharedInstance.getEvents { (events) in
@@ -24,8 +25,6 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         self.title = "Cartelera"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +63,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         
         cell.eventName.text = events[indexPath.row].name
         cell.eventImage.af_setImage(withURL: URL(string: events[indexPath.row].photoURL)!)
+        cell.delagate = self
         return cell
     }
 
@@ -72,6 +72,37 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         let collectionViewSize = collectionView.frame.size.width
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
+    // Mark: FavoriteProtocol methods
+    func addFavorito(cell: EventCollectionViewCell) {
+        guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+            return
+        }
+        let id = events[indexPath.row].id
+        let photoURL = events[indexPath.row].photoURL
+        let name = events[indexPath.row].name
+        let startDate = events[indexPath.row].startDate
+        let startTime = events[indexPath.row].startTime
+        let location = events[indexPath.row].location
+        
+        let evento = EventsCodable(id: id, photoURL: photoURL, name: name, startDate: startDate, startTime: startTime, location: location)
+        
+        eventsCodable.append(evento)
+        
+        storeEvents()
+    }
+    
+    func storeEvents() {
+        do {
+            let data = try PropertyListEncoder().encode(eventsCodable)
+            let success = NSKeyedArchiver.archiveRootObject(data, toFile:
+                EventsCodable.ArchiveURL.path)
+            print(success ? "Successful save" : "Save failed")
+        }
+        catch {
+            print("Save failed")
+        }
     }
 
     /*

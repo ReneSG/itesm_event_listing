@@ -137,6 +137,14 @@
                                                 <constraint firstAttribute="height" constant="33" id="y1r-Wl-5g5"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN5-AQ-SNi">
+                                            <rect key="frame" x="116" y="10" width="28" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Fav" image="fav_empty"/>
+                                            <connections>
+                                                <action selector="botonFavorito:" destination="fhe-Ac-dGW" eventType="touchUpInside" id="uIn-Ka-Vcs"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -149,6 +157,7 @@
                                     <constraint firstAttribute="bottom" secondItem="wsx-NF-8dQ" secondAttribute="bottom" id="qEz-SB-XmY"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="btFavorite" destination="zN5-AQ-SNi" id="ZIn-eQ-amf"/>
                                     <outlet property="eventImage" destination="wsx-NF-8dQ" id="hQm-gA-KSb"/>
                                     <outlet property="eventName" destination="JDw-WV-RgC" id="bdb-cg-gwY"/>
                                     <segue destination="JrM-6p-bTi" kind="show" id="FUP-YE-mvg"/>
@@ -170,7 +179,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh1-2o-yhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="85.907046476761622"/>
+            <point key="canvasLocation" x="944.79999999999995" y="99.400299850074973"/>
         </scene>
         <!--Filter Pop Up View Controller-->
         <scene sceneID="WSR-Zv-A5t">
@@ -279,13 +288,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y90-aX-RAN">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCell" rowHeight="138" id="Y90-aX-RAN" customClass="FavoriteTableViewCell" customModule="itesm_event_listing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y90-aX-RAN" id="QQr-zH-2Wm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UkG-Vf-ksf">
+                                            <rect key="frame" x="16" y="0.0" width="152" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHB-m8-1oi">
+                                            <rect key="frame" x="176" y="29" width="183" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwY-Co-uG7">
+                                            <rect key="frame" x="176" y="70" width="183" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventImage" destination="UkG-Vf-ksf" id="GGj-jY-lcW"/>
+                                    <outlet property="eventLocation" destination="YwY-Co-uG7" id="bj4-Zy-BIp"/>
+                                    <outlet property="eventName" destination="lHB-m8-1oi" id="lXP-Xs-BJO"/>
+                                    <segue destination="5f4-lW-YvV" kind="show" id="K3l-mQ-B1q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -297,7 +332,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJb-CW-bUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="956"/>
+            <point key="canvasLocation" x="893.60000000000002" y="955.77211394302856"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="MoM-Jx-0gU">
@@ -402,9 +437,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fav_empty" width="50" height="50"/>
         <image name="house" width="26" height="26"/>
         <image name="magnifying_glass" width="26" height="26"/>
         <image name="star" width="26" height="26"/>
         <image name="unchecked" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K3l-mQ-B1q"/>
+    </inferredMetricsTieBreakers>
 </document>
