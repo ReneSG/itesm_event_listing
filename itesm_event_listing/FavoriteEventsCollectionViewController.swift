@@ -11,7 +11,7 @@ import CoreData
 
 class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var eventsFavoritos = [EventsCodable]()
+    var eventsFavoritos = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,17 +67,26 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
         self.eventsFavoritos = listaEventos
     }
 
-    func retrieveEvents() -> [EventsCodable]? {
-        guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: EventsCodable.ArchiveURL.path) as? Data else { return nil }
+    func retrieveEvents() -> [Event]? {
+        guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: Event.ArchiveURL.path) as? Data else { return nil }
         do {
             
             let products = try
-                PropertyListDecoder().decode([EventsCodable].self, from: data)
+                PropertyListDecoder().decode([Event].self, from: data)
             return products
         }
         catch {
             print(error)
             return nil
         }
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationView = segue.destination as! EventDetailsViewController
+        destinationView.event = eventsFavoritos[(collectionView?.indexPathsForSelectedItems![0].row)!]
+        tabBarController?.tabBar.isHidden = true
     }
 }

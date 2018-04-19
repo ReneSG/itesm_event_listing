@@ -81,11 +81,6 @@
                         <viewLayoutGuide key="safeArea" id="awc-vz-cdQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="0lb-Wi-frr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="uwL-nT-Hcj">
-                            <connections>
-                                <action selector="returnToCollectionView:" destination="5f4-lW-YvV" id="yyh-Ph-R1x"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="jaj-WE-cLb">
                             <connections>
                                 <action selector="shareEvent:" destination="5f4-lW-YvV" id="3ts-sT-AOB"/>
@@ -261,7 +256,6 @@
         <!--Favoritos-->
         <scene sceneID="HMb-r1-lXQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TcD-ty-rXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="e2g-tK-oQ7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star" id="9b7-dz-uat"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A0L-5V-zY3">
@@ -272,6 +266,7 @@
                         <segue destination="tQT-A6-9pC" kind="relationship" relationship="rootViewController" id="49P-ee-Pye"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TcD-ty-rXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57" y="956"/>
         </scene>
@@ -376,6 +371,6 @@
         <image name="star" width="26" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bsk-7W-l3y"/>
+        <segue reference="ZmC-xW-Ubq"/>
     </inferredMetricsTieBreakers>
 </document>
