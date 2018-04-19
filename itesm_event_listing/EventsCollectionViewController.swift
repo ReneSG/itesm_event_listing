@@ -64,6 +64,8 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         cell.eventName.text = events[indexPath.row].name
         cell.eventImage.af_setImage(withURL: URL(string: events[indexPath.row].photoURL)!)
         cell.delagate = self
+        cell.layer.borderWidth = CGFloat(0.5)
+        cell.layer.borderColor = UIColor.black.cgColor
         return cell
     }
 
