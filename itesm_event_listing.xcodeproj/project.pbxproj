@@ -11,9 +11,8 @@
 		6991AC1B1CE7F71922ACE000 /* Pods_itesm_event_listingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */; };
 		740ECE954B56634691F3508F /* Pods_itesm_event_listingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E40FF0EAB284D845B741A9D /* Pods_itesm_event_listingUITests.framework */; };
 		753EDD92207BF80200C73265 /* EventsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EDD91207BF80200C73265 /* EventsCodable.swift */; };
-		7554C185207C07F600E9E7B0 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554C184207C07F600E9E7B0 /* FavoriteTableViewCell.swift */; };
 		84C1012F207B46450014E077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C1012E207B46450014E077 /* GoogleService-Info.plist */; };
-		84C10131207BCE2B0014E077 /* FavoriteEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */; };
+		84C10131207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10130207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift */; };
 		84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */; };
 		F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D78ED205604DD00EA2644 /* AppDelegate.swift */; };
 		F61D78F3205604DD00EA2644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61D78F1205604DD00EA2644 /* Main.storyboard */; };
@@ -54,9 +53,8 @@
 		4E3C3B94F27A0E5D188E0139 /* Pods-itesm_event_listingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingUITests/Pods-itesm_event_listingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itesm_event_listingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753EDD91207BF80200C73265 /* EventsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCodable.swift; sourceTree = "<group>"; };
-		7554C184207C07F600E9E7B0 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		84C1012E207B46450014E077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsTableViewController.swift; sourceTree = "<group>"; };
+		84C10130207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsCollectionViewController.swift; sourceTree = "<group>"; };
 		84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventsTableViewController.swift; sourceTree = "<group>"; };
 		95D854729F2E8104A0E226ED /* Pods-itesm_event_listing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listing/Pods-itesm_event_listing.debug.xcconfig"; sourceTree = "<group>"; };
 		C62E8586F6FF9561BCEE33A5 /* Pods-itesm_event_listingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingTests/Pods-itesm_event_listingTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,8 +163,7 @@
 				F667BA862058B7550035E460 /* EventCollectionViewCell.swift */,
 				F667BA882058BA930035E460 /* EventDetailsViewController.swift */,
 				F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */,
-				84C10130207BCE2B0014E077 /* FavoriteEventsTableViewController.swift */,
-				7554C184207C07F600E9E7B0 /* FavoriteTableViewCell.swift */,
+				84C10130207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift */,
 				84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */,
 				F61D78ED205604DD00EA2644 /* AppDelegate.swift */,
 				F61D78F1205604DD00EA2644 /* Main.storyboard */,
@@ -515,11 +512,10 @@
 				84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */,
 				F67490E32058AC9C002F490E /* Event.swift in Sources */,
 				F6372AF6207BEF8400749A40 /* EventsCollectionViewController.swift in Sources */,
-				84C10131207BCE2B0014E077 /* FavoriteEventsTableViewController.swift in Sources */,
+				84C10131207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift in Sources */,
 				F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */,
 				753EDD92207BF80200C73265 /* EventsCodable.swift in Sources */,
 				F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */,
-				7554C185207C07F600E9E7B0 /* FavoriteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
