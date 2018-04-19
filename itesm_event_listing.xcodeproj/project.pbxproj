@@ -10,7 +10,7 @@
 		5371C78804EE583B24766BDB /* Pods_itesm_event_listing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB3109C0DC8620F198BF57A /* Pods_itesm_event_listing.framework */; };
 		6991AC1B1CE7F71922ACE000 /* Pods_itesm_event_listingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */; };
 		740ECE954B56634691F3508F /* Pods_itesm_event_listingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E40FF0EAB284D845B741A9D /* Pods_itesm_event_listingUITests.framework */; };
-		753EDD92207BF80200C73265 /* EventsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EDD91207BF80200C73265 /* EventsCodable.swift */; };
+		753EDD92207BF80200C73265 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EDD91207BF80200C73265 /* Event.swift */; };
 		84C1012F207B46450014E077 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C1012E207B46450014E077 /* GoogleService-Info.plist */; };
 		84C10131207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10130207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift */; };
 		84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */; };
@@ -21,10 +21,8 @@
 		F61D7903205604DD00EA2644 /* itesm_event_listingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D7902205604DD00EA2644 /* itesm_event_listingTests.swift */; };
 		F61D790E205604DD00EA2644 /* itesm_event_listingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61D790D205604DD00EA2644 /* itesm_event_listingUITests.swift */; };
 		F6372AF6207BEF8400749A40 /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */; };
-		F6372AFA207C06C900749A40 /* FilterPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6372AF9207C06C900749A40 /* FilterPopUpViewController.swift */; };
 		F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA862058B7550035E460 /* EventCollectionViewCell.swift */; };
 		F667BA892058BA930035E460 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA882058BA930035E460 /* EventDetailsViewController.swift */; };
-		F67490E32058AC9C002F490E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67490E22058AC9C002F490E /* Event.swift */; };
 		F67490E52058AFCE002F490E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67490E42058AFCE002F490E /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +50,7 @@
 		3BD5B650C4AC73FF33086C7A /* Pods-itesm_event_listingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingUITests/Pods-itesm_event_listingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E3C3B94F27A0E5D188E0139 /* Pods-itesm_event_listingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itesm_event_listingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itesm_event_listingUITests/Pods-itesm_event_listingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		74AEB52661EA3FB3DC1452F6 /* Pods_itesm_event_listingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itesm_event_listingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		753EDD91207BF80200C73265 /* EventsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCodable.swift; sourceTree = "<group>"; };
+		753EDD91207BF80200C73265 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		84C1012E207B46450014E077 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84C10130207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsCollectionViewController.swift; sourceTree = "<group>"; };
 		84C10132207BCEA60014E077 /* SearchEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEventsTableViewController.swift; sourceTree = "<group>"; };
@@ -72,10 +70,8 @@
 		F61D790D205604DD00EA2644 /* itesm_event_listingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itesm_event_listingUITests.swift; sourceTree = "<group>"; };
 		F61D790F205604DD00EA2644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
-		F6372AF9207C06C900749A40 /* FilterPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopUpViewController.swift; sourceTree = "<group>"; };
 		F667BA862058B7550035E460 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		F667BA882058BA930035E460 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
-		F67490E22058AC9C002F490E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		F67490E42058AFCE002F490E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = itesm_event_listing.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,9 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				84C1012E207B46450014E077 /* GoogleService-Info.plist */,
-				753EDD91207BF80200C73265 /* EventsCodable.swift */,
+				753EDD91207BF80200C73265 /* Event.swift */,
 				F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */,
-				F67490E22058AC9C002F490E /* Event.swift */,
 				F667BA862058B7550035E460 /* EventCollectionViewCell.swift */,
 				F667BA882058BA930035E460 /* EventDetailsViewController.swift */,
 				F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */,
@@ -168,7 +163,6 @@
 				F61D78ED205604DD00EA2644 /* AppDelegate.swift */,
 				F61D78F1205604DD00EA2644 /* Main.storyboard */,
 				F61D78F4205604DD00EA2644 /* Assets.xcassets */,
-				F6372AF9207C06C900749A40 /* FilterPopUpViewController.swift */,
 				F61D78F6205604DD00EA2644 /* LaunchScreen.storyboard */,
 				F61D78F9205604DD00EA2644 /* Info.plist */,
 				F67490E42058AFCE002F490E /* APIManager.swift */,
@@ -506,15 +500,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6372AFA207C06C900749A40 /* FilterPopUpViewController.swift in Sources */,
 				F667BA892058BA930035E460 /* EventDetailsViewController.swift in Sources */,
 				F67490E52058AFCE002F490E /* APIManager.swift in Sources */,
 				84C10133207BCEA60014E077 /* SearchEventsTableViewController.swift in Sources */,
-				F67490E32058AC9C002F490E /* Event.swift in Sources */,
 				F6372AF6207BEF8400749A40 /* EventsCollectionViewController.swift in Sources */,
 				84C10131207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift in Sources */,
 				F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */,
-				753EDD92207BF80200C73265 /* EventsCodable.swift in Sources */,
+				753EDD92207BF80200C73265 /* Event.swift in Sources */,
 				F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

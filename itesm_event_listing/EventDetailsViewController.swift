@@ -31,7 +31,7 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        eventImage.af_setImage(withURL: URL(string: event.photoURL)!)
+        eventImage.af_setImage(withURL: URL(string: event.photoURL!)!)
         eventName.text = event.name
         eventLocation.text = event.location
         eventStartDate.text = event.startDate
@@ -48,6 +48,10 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         view.addSubview(signInButton)
         
         self.title = eventName.text
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,9 +92,6 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         }
     }
     
-    @IBAction func returnToCollectionView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
     func createEvent() {
         if !UIApplication.shared.canOpenURL(URL(string: "comgooglecalendar://")!) {
