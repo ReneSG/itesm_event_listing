@@ -10,13 +10,16 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, protocoloFavorito {
+class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate, protocoloFavorito {
 
     var events = [Event]()
     var eventsCodable = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
         APIManager.sharedInstance.getEvents { (events) in
             self.events = events
             self.collectionView?.reloadData()
@@ -79,10 +82,13 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         let photoURL = events[indexPath.row].photoURL
         let name = events[indexPath.row].name
         let startDate = events[indexPath.row].startDate
-        let startTime = events[indexPath.row].startTime
         let location = events[indexPath.row].location
-        
-        let evento = Event(id: id!, photoURL: photoURL!, name: name!, startDate: startDate!, startTime: startTime!, location: location!)
+        let descrip = events[indexPath.row].descrip
+        let requirements = events[indexPath.row].requirements
+        let registrationUrl = events[indexPath.row].registrationUrl
+
+
+        let evento = Event(id: id!, photoURL: photoURL!, name: name!, startDate: startDate!, location: location!, descrip: descrip, requirements: requirements, registrationUrl: registrationUrl )
         
         eventsCodable.append(evento)
         
@@ -99,5 +105,24 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         catch {
             print("Save failed")
         }
+    }
+    
+    // MARK: UIViewControllerPreviewingDelegate methods
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
+        
+        guard let cell = collectionView?.cellForItem(at: indexPath) else { return nil }
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "EventDetail") as? EventDetailsViewController else { return nil }
+        
+        detailVC.event = events[indexPath.row]
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
+        previewingContext.sourceRect = cell.frame
+        return detailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+        tabBarController?.tabBar.isHidden = true
+        showDetailViewController(navigationController!, sender: self)
     }
 }

@@ -13,16 +13,20 @@ class Event: Codable {
     var photoURL: String?
     var name: String?
     var startDate: String?
-    var startTime: String?
     var location: String?
+    var descrip: String?
+    var requirements: String?
+    var registrationUrl: String?
     
-    init(id: Int, photoURL: String, name: String, startDate: String, startTime: String, location: String?) {
+    init(id: Int, photoURL: String, name: String, startDate: String, location: String?, descrip: String?, requirements: String?, registrationUrl: String?) {
         self.id = id
         self.photoURL = photoURL
         self.name = name
         self.startDate = startDate
-        self.startTime = startTime
         self.location = location
+        self.descrip = descrip
+        self.requirements = requirements
+        self.registrationUrl = registrationUrl
     }
     
     // Ruta para guardar el archivo
@@ -36,8 +40,10 @@ class Event: Codable {
         case photoURL
         case name
         case startDate
-        case startTime
         case location
+        case descrip
+        case requirements
+        case registrationUrl
     }
     
     func encode(to encoder: Encoder) throws {
@@ -46,8 +52,10 @@ class Event: Codable {
         try container.encode(photoURL, forKey: .photoURL)
         try container.encode(name, forKey: .name)
         try container.encode(startDate, forKey: .startDate)
-        try container.encode(startTime, forKey: .startTime)
         try container.encode(location, forKey: .location)
+        try container.encode(descrip, forKey: .descrip)
+        try container.encode(requirements, forKey: .requirements)
+        try container.encode(registrationUrl, forKey: .registrationUrl)
     }
     
     required init(from decoder: Decoder) throws {
@@ -56,8 +64,9 @@ class Event: Codable {
         photoURL = try container.decode(String?.self, forKey: .photoURL)
         name = try container.decode(String?.self, forKey: .name)
         startDate = try container.decode(String?.self, forKey: .startDate)
-        startTime = try container.decode(String?.self, forKey: .startTime)
         location = try container.decode(String?.self, forKey: .location)
-        
+        descrip = try container.decode(String?.self, forKey: .descrip)
+        requirements = try container.decode(String?.self, forKey: .requirements)
+        registrationUrl = try container.decode(String?.self, forKey: .registrationUrl)
     }
 }

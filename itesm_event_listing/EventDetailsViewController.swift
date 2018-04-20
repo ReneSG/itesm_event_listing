@@ -15,27 +15,32 @@ import UIKit
 class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     var event: Event!
-
+    @IBOutlet weak var scroller: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
+    
     private let scopes = ["https://www.googleapis.com/auth/calendar"]
 
     private let service = GTLRCalendarService()
     let signInButton = GIDSignInButton()
     let output = UITextView()
-
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventStartDate: UILabel!
-    @IBOutlet weak var eventStartTime: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
-
+    @IBOutlet weak var eventDescrip: UILabel!
+    @IBOutlet weak var eventRegistrationUrl: UILabel!
+    @IBOutlet weak var eventRequirements: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scroller.contentSize = mainView.frame.size
         eventImage.af_setImage(withURL: URL(string: event.photoURL!)!)
         eventName.text = event.name
         eventLocation.text = event.location
         eventStartDate.text = event.startDate
-        eventStartTime.text = event.startTime
+        eventDescrip.text = event.descrip
+        eventRequirements.text = event.requirements
+        eventRegistrationUrl.text = event.registrationUrl
 
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
