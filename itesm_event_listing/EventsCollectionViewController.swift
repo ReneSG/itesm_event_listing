@@ -26,18 +26,14 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         }
         
         self.title = "Cartelera"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationView = segue.destination as! EventDetailsViewController
         destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
@@ -78,17 +74,8 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         guard let indexPath = self.collectionView?.indexPath(for: cell) else {
             return
         }
-        let id = events[indexPath.row].id
-        let photoURL = events[indexPath.row].photoURL
-        let name = events[indexPath.row].name
-        let startDate = events[indexPath.row].startDate
-        let location = events[indexPath.row].location
-        let descrip = events[indexPath.row].descrip
-        let requirements = events[indexPath.row].requirements
-        let registrationUrl = events[indexPath.row].registrationUrl
 
-
-        let evento = Event(id: id!, photoURL: photoURL!, name: name!, startDate: startDate!, location: location!, descrip: descrip, requirements: requirements, registrationUrl: registrationUrl )
+        let evento = events[indexPath.row].copy() as! Event
         
         eventsCodable.append(evento)
         

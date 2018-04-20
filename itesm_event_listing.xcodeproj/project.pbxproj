@@ -24,6 +24,7 @@
 		F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA862058B7550035E460 /* EventCollectionViewCell.swift */; };
 		F667BA892058BA930035E460 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA882058BA930035E460 /* EventDetailsViewController.swift */; };
 		F67490E52058AFCE002F490E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67490E42058AFCE002F490E /* APIManager.swift */; };
+		F6B29DC72089983700C77853 /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B29DC62089983700C77853 /* ContactInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F667BA862058B7550035E460 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		F667BA882058BA930035E460 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		F67490E42058AFCE002F490E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6B29DC62089983700C77853 /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
 		F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = itesm_event_listing.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				F61D78F6205604DD00EA2644 /* LaunchScreen.storyboard */,
 				F61D78F9205604DD00EA2644 /* Info.plist */,
 				F67490E42058AFCE002F490E /* APIManager.swift */,
+				F6B29DC62089983700C77853 /* ContactInformation.swift */,
 			);
 			path = itesm_event_listing;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				F6372AF6207BEF8400749A40 /* EventsCollectionViewController.swift in Sources */,
 				84C10131207BCE2B0014E077 /* FavoriteEventsCollectionViewController.swift in Sources */,
 				F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */,
+				F6B29DC72089983700C77853 /* ContactInformation.swift in Sources */,
 				753EDD92207BF80200C73265 /* Event.swift in Sources */,
 				F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */,
 			);
