@@ -26,18 +26,14 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         }
         
         self.title = "Cartelera"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationView = segue.destination as! EventDetailsViewController
         destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]

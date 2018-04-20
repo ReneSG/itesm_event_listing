@@ -30,6 +30,11 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
     @IBOutlet weak var eventDescrip: UILabel!
     @IBOutlet weak var eventRegistrationUrl: UILabel!
     @IBOutlet weak var eventRequirements: UILabel!
+    @IBOutlet weak var organizerName: UILabel!
+    @IBOutlet weak var organizerEmail: UILabel!
+    @IBOutlet weak var organizerPhone: UILabel!
+    @IBOutlet weak var organizerFbUrl: UILabel!
+    @IBOutlet weak var organizerTwitterUrl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +46,12 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         eventDescrip.text = event.descrip
         eventRequirements.text = event.requirements
         eventRegistrationUrl.text = event.registrationUrl
+        organizerName.text = event.contactInformation?.name
+        organizerEmail.text = event.contactInformation?.email
+        organizerPhone.text = event.contactInformation?.phone
+        organizerFbUrl.text = event.contactInformation?.fbUrl
+        organizerTwitterUrl.text = event.contactInformation?.twitterUrl
+
 
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
