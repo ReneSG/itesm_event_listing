@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Event: Codable {
+class Event: Codable, NSCopying {
     var id: Int?
     var photoURL: String?
     var name: String?
@@ -17,8 +17,9 @@ class Event: Codable {
     var descrip: String?
     var requirements: String?
     var registrationUrl: String?
+    var contactInformation: ContactInformation?
     
-    init(id: Int, photoURL: String, name: String, startDate: String, location: String?, descrip: String?, requirements: String?, registrationUrl: String?) {
+    init(id: Int?, photoURL: String?, name: String?, startDate: String?, location: String?, descrip: String?, requirements: String?, registrationUrl: String?, contactInformation: ContactInformation?) {
         self.id = id
         self.photoURL = photoURL
         self.name = name
@@ -27,6 +28,12 @@ class Event: Codable {
         self.descrip = descrip
         self.requirements = requirements
         self.registrationUrl = registrationUrl
+        self.contactInformation = contactInformation
+    }
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Event(id: id, photoURL: photoURL, name: name, startDate: startDate, location: location, descrip: descrip, requirements: requirements, registrationUrl: registrationUrl, contactInformation: contactInformation)
+        return copy
     }
     
     // Ruta para guardar el archivo
@@ -34,39 +41,4 @@ class Event: Codable {
                                                        in: .userDomainMask).first!
     
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("eventos")
-    
-    enum CodingKeys : String, CodingKey {
-        case id
-        case photoURL
-        case name
-        case startDate
-        case location
-        case descrip
-        case requirements
-        case registrationUrl
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(photoURL, forKey: .photoURL)
-        try container.encode(name, forKey: .name)
-        try container.encode(startDate, forKey: .startDate)
-        try container.encode(location, forKey: .location)
-        try container.encode(descrip, forKey: .descrip)
-        try container.encode(requirements, forKey: .requirements)
-        try container.encode(registrationUrl, forKey: .registrationUrl)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int?.self, forKey: .id)
-        photoURL = try container.decode(String?.self, forKey: .photoURL)
-        name = try container.decode(String?.self, forKey: .name)
-        startDate = try container.decode(String?.self, forKey: .startDate)
-        location = try container.decode(String?.self, forKey: .location)
-        descrip = try container.decode(String?.self, forKey: .descrip)
-        requirements = try container.decode(String?.self, forKey: .requirements)
-        registrationUrl = try container.decode(String?.self, forKey: .registrationUrl)
-    }
 }
