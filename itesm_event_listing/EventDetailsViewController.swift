@@ -10,19 +10,21 @@ import AlamofireImage
 import Social
 import GoogleAPIClientForREST
 import GoogleSignIn
+import EventKit
 import UIKit
 
 class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     var event: Event!
+    
     @IBOutlet weak var scroller: UIScrollView!
     @IBOutlet weak var mainView: UIView!
     
     private let scopes = ["https://www.googleapis.com/auth/calendar"]
-
     private let service = GTLRCalendarService()
-    let signInButton = GIDSignInButton()
+    let eventStore = EKEventStore()
     let output = UITextView()
+    
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventStartDate: UILabel!
@@ -57,11 +59,6 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
-
-        // Add the sign-in button
-        let viewHeight = view.frame.size.height
-        signInButton.frame = CGRect(x: self.view.center.x-(50), y: viewHeight - 110 , width: 80, height: 50)
-        view.addSubview(signInButton)
         
         self.title = eventName.text
     }
@@ -72,6 +69,63 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func addEventToCalendar(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let iOSCalendar = UIAlertAction (
+            title: "Add to Calendar",
+            style: UIAlertActionStyle.default,
+            handler: { action in self.createEventInTheCalendar(with: self.event.name!, forDate: Date(), toDate: Date())}
+        )
+        let googleCalendar = UIAlertAction(
+            title: "Add to Google Calendar",
+            style: UIAlertActionStyle.default,
+            handler: { action in GIDSignIn.sharedInstance().signIn()}
+        )
+        let cancel = UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil
+        )
+        
+        //Adds Actions
+        alert.addAction(iOSCalendar)
+        alert.addAction(googleCalendar)
+        alert.addAction(cancel)
+        
+        //Presents the alert
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func createEventInTheCalendar(with title: String, forDate eventStartDate:Date, toDate eventEndDate:Date) {
+        if !UIApplication.shared.canOpenURL(URL(string: "calshow://")!) {
+            showMissingAppAlert(appName: "Calendar")
+        } else {
+            eventStore.requestAccess(to: .event) { (success, error) in
+                if  error == nil {
+                    let event = EKEvent.init(eventStore: self.eventStore)
+                    event.title = title
+                    event.calendar = self.eventStore.defaultCalendarForNewEvents
+                    event.startDate = eventStartDate
+                    event.endDate = eventEndDate
+
+                    let alarm = EKAlarm.init(absoluteDate: Date.init(timeInterval: -3600, since: event.startDate))
+                    event.addAlarm(alarm)
+
+                    do {
+                        try self.eventStore.save(event, span: .thisEvent)
+                    } catch let error as NSError {
+                        print("failed to save event with error : \(error)")
+                    }
+                } else {
+                    print("error = \(String(describing: error?.localizedDescription))")
+                }
+            }
+            // Redirect to Calendar
+            gotoCalendar(date: eventStartDate as NSDate)
+        }
     }
 
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -152,6 +206,10 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
     func gotoGoogleCalendar(date: NSDate) {
         UIApplication.shared.open(NSURL(string: "comgooglecalendar://")! as URL)
     }
+    
+    func gotoCalendar(date: NSDate) {
+        UIApplication.shared.open(NSURL(string: "calshow://")! as URL)
+    }
 
     func gotoAppStore(urlId : String) {
         UIApplication.shared.open(URL(string: "itms://itunes.apple.com/mx/app/\(urlId)")!)
@@ -179,11 +237,13 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         switch appName {
         case "Google Calendar":
             urlId = "google-calendar/id909319292?l=en&mt=8"
+        case "Calendar":
+            urlId = "calendar/id1108185179?l=en&mt=8"
         default:
             urlId = ""
         }
         let alert = UIAlertController(title: "Restore \(appName)?",
-                                      message: "You followed a link that requires the app \(appName),which is no longer on your iPhone. You can restore it from the App Store.",
+                                      message: "You followed a link that requires the app \(appName), which is no longer on your iPhone. You can restore it from the App Store.",
                                       preferredStyle: UIAlertControllerStyle.alert)
         let showAppStore = UIAlertAction(
             title: "Show in App Store",
