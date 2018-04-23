@@ -171,7 +171,7 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             startEventDateTime.dateTime = startDateTime
             gCalendarEvent.start = startEventDateTime
             
-            let endDate = Calendar.current.date(byAdding: .day, value: 4, to: Date())
+            let endDate = startDate?.addingTimeInterval(60*60)
             let endDateTime = GTLRDateTime(date: endDate!, offsetMinutes: 50)
             let endEventDateTime = GTLRCalendar_EventDateTime()
             endEventDateTime.dateTime = endDateTime
