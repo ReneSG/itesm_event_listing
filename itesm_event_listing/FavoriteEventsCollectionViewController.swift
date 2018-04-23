@@ -11,6 +11,7 @@ import CoreData
 
 class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    
     var eventsFavoritos = [Event]()
 
     override func viewDidLoad() {
@@ -63,7 +64,6 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
     {
         eventsFavoritos.removeAll()
         guard let listaEventos = retrieveEvents() else {return}
-        
         self.eventsFavoritos = listaEventos
     }
 
