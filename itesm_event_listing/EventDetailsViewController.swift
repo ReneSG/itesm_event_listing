@@ -46,7 +46,8 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         eventImage.af_setImage(withURL: URL(string: event.photoURL!)!)
         eventName.text = event.name
         eventLocation.text = event.location
-        eventStartDate.text = event.startDate
+        eventStartDate.text = DateParser.sharedInstance.parseDateWithDayAndMonthAndTime(dateAsString: event.startDate)
+        
         eventDescrip.text = event.descrip
         eventRequirements.text = event.requirements
         eventRegistrationUrl.text = event.registrationUrl
@@ -110,11 +111,10 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
                 calendarEvent.location = self.event.location
                 calendarEvent.calendar = self.eventStore.defaultCalendarForNewEvents
                 
-                let startDate = Calendar.current.date(byAdding: .day, value: -3, to: Date())
+                let startDate = DateParser.sharedInstance.parse(dateAsString: self.event.startDate)
                 calendarEvent.startDate = startDate
                 
-                let endDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-                calendarEvent.endDate = endDate
+                calendarEvent.endDate = self.event.endDate == nil ? startDate?.addingTimeInterval(60*60) :             DateParser.sharedInstance.parse(dateAsString: self.event.endDate)
                 
                 let alarm = EKAlarm.init(absoluteDate: Date.init(timeInterval: -1800, since: calendarEvent.startDate))
                 calendarEvent.addAlarm(alarm)
@@ -161,20 +161,20 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
             
             gCalendarEvent.summary = self.event.name
             gCalendarEvent.location = self.event.location
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
 
-            let startDate = dateFormatter.date(from: event.startDate!)
+            let startDate = DateParser.sharedInstance.parse(dateAsString: event.startDate)
             let startDateTime = GTLRDateTime(date: startDate!)
             let startEventDateTime = GTLRCalendar_EventDateTime()
             startEventDateTime.dateTime = startDateTime
+            startEventDateTime.timeZone = "America/Monterrey"
             gCalendarEvent.start = startEventDateTime
             
-            let endDate = startDate?.addingTimeInterval(60*60)
+            let endDate = event.endDate == nil ? startDate?.addingTimeInterval(60*60) :             DateParser.sharedInstance.parse(dateAsString: event.endDate)
+            
             let endDateTime = GTLRDateTime(date: endDate!, offsetMinutes: 50)
             let endEventDateTime = GTLRCalendar_EventDateTime()
             endEventDateTime.dateTime = endDateTime
+            endEventDateTime.timeZone = "America/Monterrey"
             gCalendarEvent.end = endEventDateTime
             
             let createEventQuery = GTLRCalendarQuery_EventsInsert.query(withObject: gCalendarEvent, calendarId: "primary")

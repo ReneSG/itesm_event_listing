@@ -13,17 +13,19 @@ class Event: Codable, NSCopying {
     var photoURL: String?
     var name: String?
     var startDate: String?
+    var endDate: String?
     var location: String?
     var descrip: String?
     var requirements: String?
     var registrationUrl: String?
     var contactInformation: ContactInformation?
     
-    init(id: Int?, photoURL: String?, name: String?, startDate: String?, location: String?, descrip: String?, requirements: String?, registrationUrl: String?, contactInformation: ContactInformation?) {
+    init(id: Int?, photoURL: String?, name: String?, startDate: String?, endDate: String?, location: String?, descrip: String?, requirements: String?, registrationUrl: String?, contactInformation: ContactInformation?) {
         self.id = id
         self.photoURL = photoURL
         self.name = name
         self.startDate = startDate
+        self.endDate = endDate
         self.location = location
         self.descrip = descrip
         self.requirements = requirements
@@ -32,7 +34,7 @@ class Event: Codable, NSCopying {
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        let copy = Event(id: id, photoURL: photoURL, name: name, startDate: startDate, location: location, descrip: descrip, requirements: requirements, registrationUrl: registrationUrl, contactInformation: contactInformation)
+        let copy = Event(id: id, photoURL: photoURL, name: name, startDate: startDate, endDate: endDate,location: location, descrip: descrip, requirements: requirements, registrationUrl: registrationUrl, contactInformation: contactInformation)
         return copy
     }
     

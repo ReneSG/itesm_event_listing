@@ -27,6 +27,7 @@ class APIManager {
                                        photoURL: eventJSON["photo"] as? String,
                                        name: eventJSON["name"] as? String,
                                        startDate: eventJSON["startDatetime"] as? String,
+                                       endDate: eventJSON["endDatetime"] as? String,
                                        location: eventJSON["location"] as? String,
                                        descrip: eventJSON["description"] as? String,
                                        requirements: eventJSON["requirementsToRegister"] as? String,
