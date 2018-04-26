@@ -11,7 +11,6 @@ import UIKit
 protocol protocoloFavorito {
     func addFavorito(cell: EventCollectionViewCell)
     func deleteFavorito(cell: EventCollectionViewCell)
-    func deleteFavoritoFavoriteTap()
 }
 
 class EventCollectionViewCell: UICollectionViewCell {
@@ -46,8 +45,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBAction func botonFavoritoDesdeFavorito(_ sender: UIButton) {
         if (btFavoriteFav.currentImage?.isEqual(#imageLiteral(resourceName: "fav_full-1")))!
         {
-            delagate?.deleteFavoritoFavoriteTap()
-            print("boton favorito")
+            delagate?.deleteFavorito(cell: self)
         }
         
 

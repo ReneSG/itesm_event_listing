@@ -9,10 +9,9 @@
 import UIKit
 import CoreData
 
-class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-    
+class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout,protocoloFavorito{    
     var eventsFavoritos = [Event]()
+    var eventsCodable = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +33,7 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return eventsFavoritos.count
-    }
+    } 
 
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,6 +43,7 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
         cell.eventImage.af_setImage(withURL: URL(string: eventsFavoritos[indexPath.row].photoURL!)!)
         cell.layer.borderWidth = CGFloat(0.5)
         cell.layer.borderColor = UIColor.black.cgColor
+        cell.delagate = self
         return cell
     }
     
@@ -81,6 +81,47 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
         }
     }
     
+    // Mark: FavoriteProtocol methods
+    func addFavorito(cell: EventCollectionViewCell) {
+        guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+            return
+        }
+        
+        let evento = eventsFavoritos[indexPath.row].copy() as! Event
+        
+        eventsCodable.append(evento)
+        
+        storeEvents()
+    }
+    
+    func storeEvents() {
+        do {
+            let data = try PropertyListEncoder().encode(eventsCodable)
+            let success = NSKeyedArchiver.archiveRootObject(data, toFile:
+                Event.ArchiveURL.path)
+            print(success ? "Successful save" : "Save failed")
+        }
+        catch {
+            print("Save failed")
+        }
+    }
+    
+    // Mark: FavoriteDeleteProtocol methods
+    func deleteFavorito(cell: EventCollectionViewCell) {
+        guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+            return
+        }
+        
+        let indiceBorrar = indexPath.row
+
+        eventsFavoritos.remove(at: indiceBorrar)
+        //Guardar los events
+        storeEvents()
+        loadDatos()
+        collectionView?.reloadData()
+    }
+    
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -88,5 +129,7 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
         let destinationView = segue.destination as! EventDetailsViewController
         destinationView.event = eventsFavoritos[(collectionView?.indexPathsForSelectedItems![0].row)!]
         tabBarController?.tabBar.isHidden = true
+        
     }
+    
 }

@@ -11,7 +11,9 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+
 class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate, protocoloFavorito {
+    
 
     var events = [Event]()
     var eventsCodable = [Event]()
@@ -70,6 +72,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     
+ 
     // Mark: FavoriteProtocol methods
     func addFavorito(cell: EventCollectionViewCell) {
         guard let indexPath = self.collectionView?.indexPath(for: cell) else {
@@ -113,18 +116,6 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         //Guardar los events
         storeEvents()
     }
-    
-    // Mark: FavoriteDeleteFromFavoriteTabProtocol methods
-    func deleteFavoritoFavoriteTap() {
-        
-        print("Hola")
-        //Borrar el arreglo
-        //eventsCodable.remove(at: intValue)
-        
-        //Guardar los events
-        //storeEvents()
-    }
-
     
     
     // MARK: UIViewControllerPreviewingDelegate methods
