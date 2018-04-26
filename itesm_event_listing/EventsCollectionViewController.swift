@@ -8,9 +8,12 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "Cell"
 
+
 class EventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate, protocoloFavorito {
+    
 
     var events = [Event]()
     var eventsCodable = [Event]()
@@ -69,6 +72,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     
+ 
     // Mark: FavoriteProtocol methods
     func addFavorito(cell: EventCollectionViewCell) {
         guard let indexPath = self.collectionView?.indexPath(for: cell) else {
@@ -93,6 +97,26 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
             print("Save failed")
         }
     }
+    
+    // Mark: FavoriteDeleteProtocol methods
+    func deleteFavorito(cell: EventCollectionViewCell) {
+        guard let indexPath = self.collectionView?.indexPath(for: cell) else {
+            return
+        }
+        
+        let evento = events[indexPath.row].copy() as! Event
+        
+        let indexCodable = eventsCodable.index(where: {$0.id! == evento.id!})
+        
+        let intValue = eventsCodable.startIndex.distance(to: (indexCodable)!)
+        
+        //Borrar el arreglo
+        eventsCodable.remove(at: intValue)
+        
+        //Guardar los events
+        storeEvents()
+    }
+    
     
     // MARK: UIViewControllerPreviewingDelegate methods
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
