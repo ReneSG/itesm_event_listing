@@ -14,6 +14,8 @@ protocol protocoloFavorito {
 }
 
 class EventCollectionViewCell: UICollectionViewCell {
+
+    
     @IBOutlet weak var btFavorite: UIButton!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
