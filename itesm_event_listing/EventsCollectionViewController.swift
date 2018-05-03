@@ -64,6 +64,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         cell.delagate = self
         cell.layer.borderWidth = CGFloat(0.5)
         cell.layer.borderColor = UIColor.black.cgColor
+        cell.isFavorite = false
         return cell
     }
 
