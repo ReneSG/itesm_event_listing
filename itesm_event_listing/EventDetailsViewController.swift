@@ -247,4 +247,11 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
      }
      */
 
+    // MARK: Orientation
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
 }
