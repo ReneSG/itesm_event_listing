@@ -40,7 +40,6 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         super.viewDidLoad()
         
         // Configure view information
-        self.title = eventName.text
         scroller.contentSize = mainView.frame.size
         
         eventImage.af_setImage(withURL: URL(string: event.photoURL!)!)
@@ -62,6 +61,8 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
+        
+        self.title = eventName.text
     }
     
     override func viewWillDisappear(_ animated: Bool) {
