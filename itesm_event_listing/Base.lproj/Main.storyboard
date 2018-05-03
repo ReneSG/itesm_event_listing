@@ -23,8 +23,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCD-ss-W4O">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-dc-4h2">
-                                        <rect key="frame" x="0.0" y="-17" width="375" height="1231"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-dc-4h2">
+                                        <rect key="frame" x="0.0" y="47" width="375" height="1231"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cav-Pi-EUr">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -151,11 +151,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="ETE-dc-4h2" firstAttribute="top" secondItem="JCD-ss-W4O" secondAttribute="top" constant="47" id="TGf-Qr-8HQ"/>
                                     <constraint firstItem="ETE-dc-4h2" firstAttribute="leading" secondItem="JCD-ss-W4O" secondAttribute="leading" id="aHg-cX-Z9A"/>
-                                    <constraint firstItem="ETE-dc-4h2" firstAttribute="top" secondItem="JCD-ss-W4O" secondAttribute="top" id="fqa-Yd-1xa"/>
+                                    <constraint firstItem="ETE-dc-4h2" firstAttribute="width" secondItem="JCD-ss-W4O" secondAttribute="width" id="mjb-a1-4eg"/>
                                     <constraint firstAttribute="bottom" secondItem="ETE-dc-4h2" secondAttribute="bottom" id="vr2-y2-yL0"/>
                                     <constraint firstAttribute="trailing" secondItem="ETE-dc-4h2" secondAttribute="trailing" id="xEZ-Il-QnR"/>
-                                    <constraint firstItem="ETE-dc-4h2" firstAttribute="width" secondItem="JCD-ss-W4O" secondAttribute="width" id="zh2-A9-gxZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
