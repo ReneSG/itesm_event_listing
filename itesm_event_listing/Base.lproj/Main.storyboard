@@ -26,9 +26,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-dc-4h2">
                                         <rect key="frame" x="0.0" y="47" width="375" height="1231"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cav-Pi-EUr">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cav-Pi-EUr">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="375" id="A44-km-sI4"/>
+                                                </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmH-JJ-Ei3">
                                                 <rect key="frame" x="40" y="626" width="78" height="21"/>
@@ -146,7 +148,11 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="cav-Pi-EUr" firstAttribute="top" secondItem="ETE-dc-4h2" secondAttribute="top" id="3jC-Gn-FGZ"/>
                                             <constraint firstAttribute="height" constant="1231" id="QmS-u3-HFq"/>
+                                            <constraint firstItem="cav-Pi-EUr" firstAttribute="width" secondItem="ETE-dc-4h2" secondAttribute="width" id="Sq9-vz-oN1"/>
+                                            <constraint firstItem="cav-Pi-EUr" firstAttribute="leading" secondItem="ETE-dc-4h2" secondAttribute="leading" id="fYJ-DM-bNk"/>
+                                            <constraint firstAttribute="trailing" secondItem="cav-Pi-EUr" secondAttribute="trailing" id="xhN-ZQ-Yd9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
