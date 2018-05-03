@@ -23,15 +23,17 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btFavoriteFav: UIButton!
     
     var delagate : protocoloFavorito?
+    var isFavorite: Bool!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     @IBAction func botonFavorito(_ sender: UIButton) {
-        if btFavorite.currentImage!.isEqual(#imageLiteral(resourceName: "fav_empty-1"))
+        if !isFavorite
         {
             btFavorite.setImage(#imageLiteral(resourceName: "fav_full-1"),for: .normal)
+            isFavorite = true
             delagate?.addFavorito(cell: self)
 
         }
@@ -39,6 +41,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         {
             //print("Hola")
             btFavorite.setImage(#imageLiteral(resourceName: "fav_empty-1"),for: .normal)
+            isFavorite = false
             delagate?.deleteFavorito(cell: self)
         }
         

@@ -38,9 +38,11 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationView = segue.destination as! EventDetailsViewController
-        destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
-        tabBarController?.tabBar.isHidden = true
+        if segue.identifier == "detail" {
+            let destinationView = segue.destination as! EventDetailsViewController
+            destinationView.event = events[(collectionView?.indexPathsForSelectedItems![0].row)!]
+            tabBarController?.tabBar.isHidden = true
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -62,6 +64,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         cell.delagate = self
         cell.layer.borderWidth = CGFloat(0.5)
         cell.layer.borderColor = UIColor.black.cgColor
+        cell.isFavorite = false
         return cell
     }
 
@@ -135,5 +138,13 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
         tabBarController?.tabBar.isHidden = true
         showDetailViewController(navigationController!, sender: self)
+    }
+    
+    // MARK: Orientation
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
     }
 }
