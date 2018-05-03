@@ -25,6 +25,7 @@
 		F6372AF6207BEF8400749A40 /* EventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */; };
 		F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA862058B7550035E460 /* EventCollectionViewCell.swift */; };
 		F667BA892058BA930035E460 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F667BA882058BA930035E460 /* EventDetailsViewController.swift */; };
+		F66E9D00209278FF00573698 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E9CFF209278FE00573698 /* DateParser.swift */; };
 		F67490E52058AFCE002F490E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67490E42058AFCE002F490E /* APIManager.swift */; };
 		F6B29DC72089983700C77853 /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B29DC62089983700C77853 /* ContactInformation.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		F6372AF5207BEF8400749A40 /* EventsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewController.swift; sourceTree = "<group>"; };
 		F667BA862058B7550035E460 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		F667BA882058BA930035E460 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		F66E9CFF209278FE00573698 /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		F67490E42058AFCE002F490E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F6B29DC62089983700C77853 /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
 		F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = itesm_event_listing.entitlements; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		F61D78EC205604DD00EA2644 /* itesm_event_listing */ = {
 			isa = PBXGroup;
 			children = (
+				F66E9CFF209278FE00573698 /* DateParser.swift */,
 				84C1012E207B46450014E077 /* GoogleService-Info.plist */,
 				753EDD91207BF80200C73265 /* Event.swift */,
 				F6E546072059CF76000DFD5E /* itesm_event_listing.entitlements */,
@@ -519,6 +522,7 @@
 				F667BA872058B7550035E460 /* EventCollectionViewCell.swift in Sources */,
 				F6B29DC72089983700C77853 /* ContactInformation.swift in Sources */,
 				753EDD92207BF80200C73265 /* Event.swift in Sources */,
+				F66E9D00209278FF00573698 /* DateParser.swift in Sources */,
 				F61D78EE205604DD00EA2644 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,10 +693,10 @@
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J66VD9NRME;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -708,10 +712,10 @@
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J66VD9NRME;
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
