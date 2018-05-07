@@ -179,20 +179,20 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Twitter" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UHi-Gn-dbL">
-                                                <rect key="frame" x="98" y="1077.5" width="240" height="33"/>
+                                                <rect key="frame" x="98" y="1083.5" width="240" height="38"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="33" id="vdF-gc-ene"/>
+                                                    <constraint firstAttribute="height" constant="38" id="vdF-gc-ene"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Fb" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9B7-dF-Hwo">
-                                                <rect key="frame" x="98" y="1038.5" width="256" height="27"/>
+                                                <rect key="frame" x="98" y="1038.5" width="256" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="ZN7-gy-fk7"/>
+                                                    <constraint firstAttribute="height" constant="33" id="ZN7-gy-fk7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
