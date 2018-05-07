@@ -30,6 +30,10 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         
         self.title = "Cartelera"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

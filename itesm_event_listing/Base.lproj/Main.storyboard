@@ -450,7 +450,7 @@
         <!--Créditos-->
         <scene sceneID="bpb-IU-iTg">
             <objects>
-                <viewController title="Créditos" id="avQ-cW-70S" sceneMemberID="viewController">
+                <viewController title="Créditos" id="avQ-cW-70S" customClass="CreditsViewController" customModule="itesm_event_listing" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DCs-iZ-eRn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
