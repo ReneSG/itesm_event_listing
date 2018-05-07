@@ -33,8 +33,8 @@ class EventDetailsViewController: UIViewController, GIDSignInDelegate, GIDSignIn
     @IBOutlet weak var organizerName: UILabel!
     @IBOutlet weak var organizerEmail: UILabel!
     @IBOutlet weak var organizerPhone: UILabel!
-    @IBOutlet weak var organizerFbUrl: UILabel!
-    @IBOutlet weak var organizerTwitterUrl: UILabel!
+    @IBOutlet weak var organizerTwitterUrl: UITextView!
+    @IBOutlet weak var organizerFbUrl: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
