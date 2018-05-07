@@ -129,7 +129,7 @@ class EventsCollectionViewController: UICollectionViewController, UICollectionVi
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "EventDetail") as? EventDetailsViewController else { return nil }
         
         detailVC.event = events[indexPath.row]
-        detailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 425)
         previewingContext.sourceRect = cell.frame
         return detailVC
     }
