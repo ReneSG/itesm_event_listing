@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -385,10 +384,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN5-AQ-SNi">
-                                                    <rect key="frame" x="108" y="5" width="32" height="32"/>
+                                                    <rect key="frame" x="112" y="2" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="7Lj-X8-fFT"/>
-                                                        <constraint firstAttribute="height" constant="32" id="MZX-x9-2BU"/>
+                                                        <constraint firstAttribute="width" constant="28" id="7Lj-X8-fFT"/>
+                                                        <constraint firstAttribute="height" constant="28" id="MZX-x9-2BU"/>
                                                     </constraints>
                                                     <state key="normal" image="fav_empty-1"/>
                                                     <connections>
@@ -398,16 +397,14 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zN5-AQ-SNi" secondAttribute="trailing" constant="4" id="3sG-Iw-Xl3"/>
                                                 <constraint firstAttribute="bottom" secondItem="JDw-WV-RgC" secondAttribute="bottom" constant="6" id="6Ks-BQ-Nfk"/>
-                                                <constraint firstItem="zN5-AQ-SNi" firstAttribute="top" secondItem="E9G-co-Es5" secondAttribute="topMargin" constant="-3" id="9aO-0R-weL"/>
                                                 <constraint firstItem="JDw-WV-RgC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E9G-co-Es5" secondAttribute="leading" id="C7P-Ec-x1Q"/>
-                                                <constraint firstItem="zN5-AQ-SNi" firstAttribute="top" secondItem="E9G-co-Es5" secondAttribute="topMargin" constant="-3" id="CxB-U3-p5J"/>
                                                 <constraint firstItem="JDw-WV-RgC" firstAttribute="width" secondItem="E9G-co-Es5" secondAttribute="width" id="Cxo-Uu-1Qe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zN5-AQ-SNi" secondAttribute="trailing" constant="-4" id="DBs-co-KeP"/>
                                                 <constraint firstAttribute="trailing" secondItem="JDw-WV-RgC" secondAttribute="trailing" constant="-8" id="Lzy-Qt-RQf"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zN5-AQ-SNi" secondAttribute="trailing" constant="-4" id="NMo-1q-seM"/>
-                                                <constraint firstItem="zN5-AQ-SNi" firstAttribute="top" secondItem="E9G-co-Es5" secondAttribute="topMargin" constant="-3" id="jJL-X4-nHX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="zN5-AQ-SNi" secondAttribute="trailing" constant="-4" id="wcE-2e-0yQ"/>
+                                                <constraint firstItem="zN5-AQ-SNi" firstAttribute="top" secondItem="E9G-co-Es5" secondAttribute="top" constant="2" id="Suf-5E-WP6"/>
+                                                <constraint firstAttribute="bottom" secondItem="zN5-AQ-SNi" secondAttribute="bottom" constant="3" id="nOo-wI-Idc"/>
+                                                <constraint firstItem="zN5-AQ-SNi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E9G-co-Es5" secondAttribute="leading" constant="112" id="rav-AC-X2k"/>
                                                 <constraint firstAttribute="height" constant="33" id="y1r-Wl-5g5"/>
                                             </constraints>
                                         </view>
@@ -577,9 +574,12 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd5-wJ-ad7">
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vd5-wJ-ad7">
                                                     <rect key="frame" x="112" y="2" width="28" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="28" id="Q7f-fa-8dT"/>
+                                                        <constraint firstAttribute="height" constant="28" id="m4s-5y-Vas"/>
+                                                    </constraints>
                                                     <state key="normal" image="fav_full-1"/>
                                                     <connections>
                                                         <action selector="botonFavoritoDesdeFavorito:" destination="q2U-6m-5ei" eventType="touchUpInside" id="kod-cs-Pid"/>
@@ -588,11 +588,15 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Vd5-wJ-ad7" secondAttribute="bottom" constant="3" id="5uG-0C-O6m"/>
                                                 <constraint firstAttribute="trailing" secondItem="EaW-06-WZv" secondAttribute="trailing" constant="-8" id="HmK-gY-xDp"/>
+                                                <constraint firstItem="Vd5-wJ-ad7" firstAttribute="top" secondItem="eMz-bb-EMf" secondAttribute="top" constant="2" id="MM6-Fi-zXG"/>
                                                 <constraint firstItem="EaW-06-WZv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eMz-bb-EMf" secondAttribute="leading" id="P1w-fj-cLr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vd5-wJ-ad7" secondAttribute="trailing" constant="4" id="RyH-oo-0sh"/>
                                                 <constraint firstItem="EaW-06-WZv" firstAttribute="width" secondItem="eMz-bb-EMf" secondAttribute="width" id="SPn-6n-ZAP"/>
                                                 <constraint firstAttribute="bottom" secondItem="EaW-06-WZv" secondAttribute="bottom" constant="6" id="VnD-aI-05e"/>
                                                 <constraint firstAttribute="height" constant="33" id="YJZ-vE-xBK"/>
+                                                <constraint firstItem="Vd5-wJ-ad7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eMz-bb-EMf" secondAttribute="leading" constant="112" id="pRM-Qc-KJw"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -637,6 +641,6 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
         <image name="twitter" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZmC-xW-Ubq"/>
+        <segue reference="bsk-7W-l3y"/>
     </inferredMetricsTieBreakers>
 </document>
