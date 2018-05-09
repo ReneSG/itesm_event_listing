@@ -452,28 +452,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-4u-ASW">
-                                <rect key="frame" x="16" y="170.5" width="343" height="325"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq3-4u-ASW">
+                                <rect key="frame" x="16" y="150" width="343" height="383"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="325" id="1CX-bG-FQH"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="383" id="1CX-bG-FQH"/>
                                 </constraints>
-                                <string key="text">Cartelera Tec ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Enero Mayo de 2018, como parte del curso Desarrollo de Aplicaciones para Dispositivos Móviles y asesorados por la maestra Yolanda Martínez Treviño. 
+                                <mutableString key="text">Cartelera Tec ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Enero Mayo de 2018, como parte del curso Desarrollo de Aplicaciones para Dispositivos Móviles y asesorados por la maestra Yolanda Martínez Treviño. 
                   Desarrolladores:
                   Rene Garcia
                   Renata Saldivar
                   Andres Villanueva
 
-Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro.
+*Los iconos pertenecen a iOS 11 Glyphs: icons8.com/ios</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ItunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="azd-c7-5bB">
+                                <rect key="frame" x="159" y="83" width="56" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Kru-bh-QUB"/>
+                                    <constraint firstAttribute="height" constant="59" id="osI-Uh-8OW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.086274509799999996" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ArQ-Yq-0sI" firstAttribute="trailing" secondItem="vq3-4u-ASW" secondAttribute="trailing" constant="16" id="UPb-tP-io4"/>
-                            <constraint firstItem="vq3-4u-ASW" firstAttribute="centerY" secondItem="DCs-iZ-eRn" secondAttribute="centerY" id="Xok-Fn-UPQ"/>
-                            <constraint firstItem="vq3-4u-ASW" firstAttribute="leading" secondItem="ArQ-Yq-0sI" secondAttribute="leading" constant="16" id="chW-sN-AsX"/>
+                            <constraint firstItem="ArQ-Yq-0sI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vq3-4u-ASW" secondAttribute="trailing" constant="16" id="UPb-tP-io4"/>
+                            <constraint firstItem="azd-c7-5bB" firstAttribute="top" secondItem="ArQ-Yq-0sI" secondAttribute="top" constant="19" id="WXe-m4-77J"/>
+                            <constraint firstItem="vq3-4u-ASW" firstAttribute="top" secondItem="azd-c7-5bB" secondAttribute="bottom" constant="8" id="YbR-4j-MZu"/>
+                            <constraint firstItem="vq3-4u-ASW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ArQ-Yq-0sI" secondAttribute="leading" constant="16" id="chW-sN-AsX"/>
+                            <constraint firstItem="azd-c7-5bB" firstAttribute="centerX" secondItem="ArQ-Yq-0sI" secondAttribute="centerX" id="mDs-2a-uyx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ArQ-Yq-0sI"/>
                     </view>
@@ -487,7 +497,7 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzi-ou-anW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="-67"/>
+            <point key="canvasLocation" x="2696.8000000000002" y="-67.016491754122939"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="QEC-k6-NK9">
@@ -631,6 +641,7 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
         </scene>
     </scenes>
     <resources>
+        <image name="ItunesArtwork" width="512" height="512"/>
         <image name="facebook" width="30" height="30"/>
         <image name="fav_empty-1" width="1963" height="2134"/>
         <image name="fav_full-1" width="1963" height="2134"/>
@@ -641,6 +652,6 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
         <image name="twitter" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bsk-7W-l3y"/>
+        <segue reference="ZmC-xW-Ubq"/>
     </inferredMetricsTieBreakers>
 </document>
