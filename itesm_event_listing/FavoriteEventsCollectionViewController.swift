@@ -9,9 +9,16 @@
 import UIKit
 import CoreData
 
-class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout,protocoloFavorito{    
+protocol quitarDeHomeFavorito {
+    func quitarFav(int: Int)
+}
+
+class FavoriteEventsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout,protocoloFavorito{
+    
     var eventsFavoritos = [Event]()
     var eventsCodable = [Event]()
+    
+    var delegateFav : quitarDeHomeFavorito!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,13 +120,14 @@ class FavoriteEventsCollectionViewController: UICollectionViewController, UIColl
         }
         
         let indiceBorrar = indexPath.row
+        let idEvent = eventsFavoritos[indexPath.row].id
         eventsFavoritos.remove(at: indiceBorrar)
         //Guardar los events
         print(indiceBorrar)
         storeEvents()
         collectionView?.reloadData()
+        
     }
-    
     
     // MARK: - Navigation
     

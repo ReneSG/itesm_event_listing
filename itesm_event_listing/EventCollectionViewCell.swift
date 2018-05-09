@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 protocol protocoloFavorito {
     func addFavorito(cell: EventCollectionViewCell)
     func deleteFavorito(cell: EventCollectionViewCell)
@@ -23,6 +24,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btFavoriteFav: UIButton!
     
     var delagate : protocoloFavorito?
+     var delagate2 : protocoloFavorito?
     var isFavorite: Bool!
     
     override func awakeFromNib() {

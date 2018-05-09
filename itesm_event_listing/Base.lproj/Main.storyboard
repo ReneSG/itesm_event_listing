@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qe-lR-ten">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1qe-lR-ten">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -90,7 +90,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOh-hI-Xks">
-                                                <rect key="frame" x="40" y="911.5" width="294" height="21"/>
+                                                <rect key="frame" x="40" y="911.5" width="294" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -433,7 +433,8 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="wAO-ax-TJ8">
-                        <barButtonItem key="rightBarButtonItem" title="Créditos" id="dQD-sd-dg7">
+                        <barButtonItem key="rightBarButtonItem" title="Créditos" image="icons8-info-50" id="dQD-sd-dg7">
+                            <inset key="imageInsets" minX="0.0" minY="1" maxX="-13" maxY="-9"/>
                             <connections>
                                 <segue destination="avQ-cW-70S" kind="show" identifier="credits" id="8EM-2y-EaW"/>
                             </connections>
@@ -462,18 +463,24 @@
                   Rene Garcia
                   Renata Saldivar
                   Andres Villanueva
-
 Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CarteleraLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="b5B-NU-Ydc">
+                                <rect key="frame" x="53" y="92" width="268" height="153"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.082734398540000004" green="0.085402615370000004" blue="0.13333871959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="b5B-NU-Ydc" firstAttribute="top" secondItem="ArQ-Yq-0sI" secondAttribute="top" constant="28" id="Cnv-ym-K7q"/>
+                            <constraint firstItem="b5B-NU-Ydc" firstAttribute="leading" secondItem="ArQ-Yq-0sI" secondAttribute="leading" constant="53" id="MV5-jw-rpP"/>
                             <constraint firstItem="ArQ-Yq-0sI" firstAttribute="trailing" secondItem="vq3-4u-ASW" secondAttribute="trailing" constant="16" id="UPb-tP-io4"/>
-                            <constraint firstItem="vq3-4u-ASW" firstAttribute="centerY" secondItem="DCs-iZ-eRn" secondAttribute="centerY" id="Xok-Fn-UPQ"/>
+                            <constraint firstItem="vq3-4u-ASW" firstAttribute="centerY" secondItem="DCs-iZ-eRn" secondAttribute="centerY" constant="90" id="Xok-Fn-UPQ"/>
                             <constraint firstItem="vq3-4u-ASW" firstAttribute="leading" secondItem="ArQ-Yq-0sI" secondAttribute="leading" constant="16" id="chW-sN-AsX"/>
+                            <constraint firstItem="b5B-NU-Ydc" firstAttribute="centerX" secondItem="vq3-4u-ASW" secondAttribute="centerX" id="e89-wm-cr6"/>
+                            <constraint firstItem="vq3-4u-ASW" firstAttribute="top" secondItem="b5B-NU-Ydc" secondAttribute="bottom" constant="16" id="qKC-qw-14K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ArQ-Yq-0sI"/>
                     </view>
@@ -487,7 +494,7 @@ Cartelera Tec se distribuye como está de manera gratuita y se prohíbe su distr
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzi-ou-anW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="-67"/>
+            <point key="canvasLocation" x="2696.8000000000002" y="-67.016491754122939"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="QEC-k6-NK9">
