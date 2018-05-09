@@ -701,10 +701,10 @@
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X94BRTC6JB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -720,10 +720,10 @@
 				CODE_SIGN_ENTITLEMENTS = itesm_event_listing/itesm_event_listing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X94BRTC6JB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = itesm_event_listing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "renata.itesm-event-listing";
+				PRODUCT_BUNDLE_IDENTIFIER = "rene.itesm-event-listing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
